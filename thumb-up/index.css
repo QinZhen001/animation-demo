@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.wrapper {
+  padding: 10px;
+  height: 200px;
+  width: 100%;
+  background-color: #2E2E2E;
+  text-align: center;
+  font-size: 0;
+}
+.wrapper .action-button {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 2px solid #ccc;
+}
+.wrapper .action-button .heart {
+  width: 100px;
+  height: 100px;
+  background-image: url("img/heart-sprite.png");
+}
+.wrapper .action-button .heart:hover {
+  animation: thumb-up 1s steps(28);
+}
+.wrapper .action-button .star {
+  width: 100px;
+  height: 100px;
+  background-image: url("img/star-sprite.png");
+}
+.wrapper .action-button .star:hover {
+  animation: thumb-up 1s steps(28);
+}
+@keyframes thumb-up {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -2800px 0;
+  }
+}

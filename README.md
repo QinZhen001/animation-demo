@@ -15,6 +15,10 @@
 [http://svgtrick.com/tricks/7ecdbe287454e03bcbe6d36c3ee584bc](http://svgtrick.com/tricks/7ecdbe287454e03bcbe6d36c3ee584bc)
 
 
+### thumb up
+酷炫的点赞效果
+利用animation-timing-function属性中的 steps()
+[http://www.migong.org/1200](http://www.migong.org/1200)
 
 ### other
 存放一些布局相关的杂项
