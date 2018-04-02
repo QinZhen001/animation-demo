@@ -10,5 +10,11 @@
 一个简单的CSS圆形缩放动画
 
 
+### nice-loading
+创建一个漂亮的加载动画
+[http://svgtrick.com/tricks/7ecdbe287454e03bcbe6d36c3ee584bc](http://svgtrick.com/tricks/7ecdbe287454e03bcbe6d36c3ee584bc)
+
+
+
 ### other
 存放一些布局相关的杂项
