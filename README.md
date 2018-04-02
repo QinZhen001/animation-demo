@@ -20,5 +20,14 @@
 利用animation-timing-function属性中的 steps()
 [http://www.migong.org/1200](http://www.migong.org/1200)
 
+
+### bump-box
+使用clip-path实现了一个凹凸的视觉效果
+
 ### other
 存放一些布局相关的杂项
+
+
+
+#### margin-top
+子元素与父元素边重合，子元素margin-top也会作用到父元素
