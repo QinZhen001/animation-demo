@@ -15,7 +15,7 @@
 [http://svgtrick.com/tricks/7ecdbe287454e03bcbe6d36c3ee584bc](http://svgtrick.com/tricks/7ecdbe287454e03bcbe6d36c3ee584bc)
 
 
-### thumb up
+### thumb-up
 酷炫的点赞效果
 利用animation-timing-function属性中的 steps()
 [http://www.migong.org/1200](http://www.migong.org/1200)
@@ -23,6 +23,12 @@
 
 ### bump-box
 使用clip-path实现了一个凹凸的视觉效果
+
+
+### Inverted-triangle
+全屏剪裁图片，倒三角视觉效果
+
+
 
 ### other
 存放一些布局相关的杂项
