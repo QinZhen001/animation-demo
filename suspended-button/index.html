@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>令人震惊的悬浮效果</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    #main {
+      width: 1000px;
+      height: 500px;
+      border: 10px solid blue;
+      padding: 30px;
+      margin: 0 auto;
+      overflow: auto;
+    }
+
+    #content {
+      width: 1500px;
+      height: 1500px;
+      border: 10px solid greenyellow;
+      overflow: auto;
+      position: relative;
+    }
+
+    #block1 {
+      width: 100px;
+      height: 100px;
+      background-color: #a9a9a9;
+      position: absolute;
+      top: 50px;
+      left: 100px;
+    }
+  </style>
+</head>
+<body>
+<div id="main">
+  <div id="content">
+    <div id="block1"></div>
+  </div>
+</div>
+</body>
+
+<script>
+    var main = document.getElementById("main");
+    var block1 = document.getElementById("block1");
+    block1.addEventListener('click', function (e) {
+        console.log(e.target.offsetWidth)
+    })
+</script>
+</html>
