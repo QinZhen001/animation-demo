@@ -9,46 +9,28 @@
       margin: 0;
     }
 
-    #main {
-      width: 1000px;
-      height: 500px;
-      border: 10px solid blue;
-      padding: 30px;
-      margin: 0 auto;
-      overflow: auto;
+    button {
+
     }
 
-    #content {
-      width: 1500px;
-      height: 1500px;
-      border: 10px solid greenyellow;
-      overflow: auto;
-      position: relative;
-    }
-
-    #block1 {
-      width: 100px;
-      height: 100px;
-      background-color: #a9a9a9;
-      position: absolute;
-      top: 50px;
-      left: 100px;
-    }
   </style>
 </head>
 <body>
-<div id="main">
-  <div id="content">
-    <div id="block1"></div>
-  </div>
-</div>
+<button>Hover me I'm awesome</button>
 </body>
 
 <script>
-    var main = document.getElementById("main");
-    var block1 = document.getElementById("block1");
-    block1.addEventListener('click', function (e) {
-        console.log(e.target.offsetWidth)
-    })
+    var myBtn = doc.getElementsByTagName('button')
+
+    document.querySelector('.button').onmousemove = (e) => {
+
+        //计算相对于元素的位置 这里父元素是body所以用e.target.offsetLeft
+        const x = e.pageX - e.target.offsetLeft
+        const y = e.pageY - e.target.offsetTop
+
+        e.target.style.setProperty('--x', `${ x }px`)
+        e.target.style.setProperty('--y', `${ y }px`)
+
+    }
 </script>
 </html>
