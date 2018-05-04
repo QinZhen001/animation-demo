@@ -3,34 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>令人震惊的悬浮效果</title>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-    }
-
-    button {
-
-    }
-
-  </style>
+  <link rel="stylesheet" href="./index.css" type="text/css">
 </head>
 <body>
-<button>Hover me I'm awesome</button>
+<button>
+  <span id="text">Hover me I'm awesome</span>
+</button>
 </body>
 
 <script>
-    var myBtn = doc.getElementsByTagName('button')
+    var myBtn = document.getElementsByTagName('button')[0]
+    myBtn.addEventListener('mousemove', function (e) {
+        //计算相对于元素的位置 这里父元素是body所以可以用offsetLeft
+        //因为button里面的span元素也会触发mousemove事件 所以要用currentTarget指向注册该事件的对象
+        const x = e.pageX - e.currentTarget.offsetLeft
+        const y = e.pageY - e.currentTarget.offsetTop
 
-    document.querySelector('.button').onmousemove = (e) => {
+//        console.log('--x', `${ x }px`)
+//        console.log('--y', `${ y }px`)
 
-        //计算相对于元素的位置 这里父元素是body所以用e.target.offsetLeft
-        const x = e.pageX - e.target.offsetLeft
-        const y = e.pageY - e.target.offsetTop
-
-        e.target.style.setProperty('--x', `${ x }px`)
-        e.target.style.setProperty('--y', `${ y }px`)
-
-    }
+        e.currentTarget.style.setProperty('--x', `${ x }px`)
+        e.currentTarget.style.setProperty('--y', `${ y }px`)
+    })
 </script>
 </html>
