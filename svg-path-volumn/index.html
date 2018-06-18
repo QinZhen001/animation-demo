@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>svg的path实现的控制音量</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+
+  </style>
+</head>
+<body>
+<svg class="volumn-controller" width="580" height="400" xmlns="http://www.w3.org/2000/svg">
+  <path class="volumn-path" stroke="#000" d="m100,247c93,-128 284,-129 388,6" opacity="0.5" stroke-width="1"
+        fill="#fff"/>
+  <circle class="drag-button" r="12" cy="247" cx="100" stroke-width="1" stroke="#000" fill="#fff"/>
+  </g>
+</svg>
+</body>
+<script>
+    let volumnPath = document.querySelector('.volumn-path')
+    // 输出path在长度为100的位置的点坐标
+    console.log(volumnPath.getPointAtLength(100))
+    // 输出当前path的总长度
+    console.log(volumnPath.getTotalLength());
+</script>
+</html>

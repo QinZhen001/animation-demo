@@ -44,3 +44,11 @@ svg基础使用
 
 ### 仿FLASH的图片轮换播放器
 一个充满各种效果的轮播图
+
+
+### clip-path
+使用clip-path + svg的路径做出心形的遮罩
+
+
+### svg-path-volumn
+svg的path实现的控制音量(沿着路径拖拽的交互)
