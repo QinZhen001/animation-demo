@@ -9,7 +9,17 @@
       margin: 0;
     }
 
+    .dragging {
+      cursor: pointer;
+    }
 
+    .drag-button {
+      cursor: pointer;
+    }
+
+    text {
+      user-select: none;
+    }
   </style>
 </head>
 <body>
@@ -78,12 +88,14 @@ https://juejin.im/post/5b263f886fb9a00e63252dbe?utm_source=gold_browser_extensio
     let $text = $volumnController.querySelector('.text')
 
 
-    $volumnPath.addEventListener('mousedown', movePoint)
+    $volumnPath.addEventListener('click', movePoint)
     $dragButton.addEventListener('mousedown', function (event) {
+        document.body.classList.add('dragging')
         document.addEventListener('mousemove', movePoint);
-        return false;
+
     });
     document.addEventListener('mouseup', function () {
+        document.body.classList.remove('dragging')
         document.removeEventListener('mousemove', movePoint);
     });
 
@@ -99,8 +111,6 @@ https://juejin.im/post/5b263f886fb9a00e63252dbe?utm_source=gold_browser_extensio
 
         let volumnValue = Math.round(volumnDistances[diffx] / pathTotalLength * 100)
         $text.textContent = `Volumn ${volumnValue}`
-
-        return false
     }
 
 
