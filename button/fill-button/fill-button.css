@@ -1,0 +1,100 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+body {
+  background: #2D2D34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+.box {
+  margin: 15px;
+  position: relative;
+  width: 120px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F27059;
+}
+.box .item {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  transition: 0.4s all ease;
+}
+.one::before,
+.one::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #F27059;
+  transition: 0.4s all ease;
+}
+.one::before {
+  top: 0;
+}
+.one::after {
+  bottom: 0;
+}
+.one:hover::before,
+.one:hover::after {
+  transition: 0.4s all ease;
+}
+.one:hover::before {
+  transform: translateY(-10px);
+}
+.one:hover::after {
+  transform: translateY(10px);
+}
+.one:hover .item {
+  color: white;
+}
+.one:hover .item::before,
+.one:hover .item::after {
+  width: 100%;
+}
+.one .item::before,
+.one .item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: #F27059;
+  transition: 0.4s all ease;
+  z-index: -1;
+}
+.one .item::before {
+  left: 0;
+}
+.one .item::after {
+  right: 0;
+}
+.two {
+  box-sizing: border-box;
+  border: 2px solid #F27059;
+  position: relative;
+}
+.two::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: 0.4s all ease;
+  background: #F27059;
+  z-index: -1;
+}
+.two:hover {
+  color: white;
+}
+.two:hover::before {
+  width: 100%;
+}
