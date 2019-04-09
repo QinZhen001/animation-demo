@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3d-page-turning 3d翻书效果</title>
+  <style>
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .pages {
+      position: relative;
+    }
+
+    .paper {
+      display: none;
+      position: absolute;
+      /* 默认放在右边 */
+      right: 0;
+    }
+
+    .page {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: inline-block;
+      width: 300px;
+      height: 300px;
+    }
+
+    .paper[data-left],
+    .paper[data-right] {
+      display: block;
+      z-index: 1;
+    }
+
+    .paper[data-left] {
+      right: auto;
+      left: 0;
+    }
+
+    /* 把相邻的paper显示出来 */
+    .paper[data-right] + .paper {
+      display: block;
+    }
+
+    .page-1-back,
+    .page-2-back {
+      transform: scale(-1, 1);
+      z-index: -1;
+    }
+
+    @keyframes flip-to-left {
+      from {
+        transform: rotateY(0);
+      }
+      to {
+        transform: rotateY(-180deg);
+      }
+    }
+
+    .paper[data-right] {
+      transform-origin: left center;
+      animation: flip-to-left 2s ease-in-out;
+    }
+
+  </style>
+</head>
+<body>
+<ul class="pages">
+  <!--一个li.paper包含了正反两页-->
+  <li class="paper" data-left>
+    <!--一个.page就是一页内容-->
+    <div class="page page-1-back">
+      <img src="slider1.jpg" alt>
+    </div>
+    <div class="page page-1">
+      <img src="slider2.jpg" alt>
+    </div>
+  </li>
+  <li class="paper" data-right>
+    <div class="page page-2">
+      <img src="slider3.jpg" alt>
+    </div>
+    <div class="page page-2-back">
+      <img src="slider4.jpg" alt>
+    </div>
+  </li>
+  <!--其它页内容省略-->
+</ul>
+
+</body>
+</html>
