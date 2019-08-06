@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>fake-input-box 仿ofo输入框</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: sans-serif !important;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul li {
+      list-style: none;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+    }
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      background-color: #F6F6F6;
+    }
+
+    /*头部*/
+    .wrapper header {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 45px;
+      box-sizing: border-box;
+      background-color: white;
+      box-shadow: 0 0 5px #888;
+    }
+
+    .wrapper header::after {
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+      transform-origin: 100% 100%;
+      transform: scaleY(.5);
+      border: 1px solid #ccc;
+    }
+
+    .wrapper header .back {
+      color: #10AEFF;
+      display: block;
+      position: relative;
+      margin-left: 40px;
+      font-size: 18px;
+    }
+
+    .wrapper header .back::before {
+      position: absolute;
+      display: block;
+      width: 25px;
+      height: 25px;
+      content: '';
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABfElEQVRoQ+3ZTU7CQBQH8PdIWNsjyKJdewS5Ad4AltCVh0GX4gnUE8gRdEtM9AQwW13wDBNLTG1M6PuYmWS6bsv/9958pANC4hcmnh8yIHQHcwdyB5gVCDKEitv3czcffTCz+8fNAcVyMx0g3u2JZq6uVlyEKaAJ34TeI4zdvFxzEGaAdngAut8uqiknvNkQ0gpvAtAMrw7QDq8KsAivBmiHJ4KnXV1OuBO263nxVahYbi4Q8BkRisMPEtArfQ4v3fXIRQ+wDi86hEKEFwOECi8CCBmeDQgdngWIIXxvQCzheQDENQKc+bWe6IW+hmOttf6//aP3Rua7EAGiN+BQlRgQLEAMCDYgNEIEEBIhBgiFEAWEQIgDPOLmbTIAemjWbwJ43C3Kq+i/B34H/PNJSbTa1tVMGqHSgSakBUIV8DMn/FHisfLCnVAHaCNMAJoIM0AXIqnD3fbETvJ4/YhI+Q+OpPYB6bBd7zOdxBqgDNCo6invzB04pVoa934DNIkbQDw/picAAAAASUVORK5CYII=) center no-repeat;
+      background-size: cover;
+      left: -21px;
+    }
+
+    .wrapper header .saoma {
+      margin-right: 20px;
+      width: 25px;
+      height: 25px;
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACmUlEQVRoQ+1WS3LaUBDsIbLxzoITQFXE1twg5gbOCUyWiIXhBMEngCwkliYniH0C4xMEbxFVkAuAvAug0qQEgZKEfq63sHE9lmh63nT3qJ8IR/6jI58fksBbOygdkA4IKiBXSFBAYbh0QFhCwQbSAUEBheHSAWEJBRtIBwQFFIZ/bAdUY1wF0TmWyrPdLtuvlUs1rS8exta1p1dju1MVeecCzC92szKKw0c6oJqTa4LbIVBpB2Tgnklp243yLGkYtTtVc2fODbtoEUHd1zIP3NVJO02IDf503QVRfX82w6YcevOGdhs++4BA0Rjf+cF+ADNsBtfiFPEOp9P1IxFVo0gy84hXJ7U4Elu8Mw0QDw4wmDcr3/x/BQio5uQqB/6VpDCDZwu9Uo6qKRpWB4TvyevCP+d6Za+uv7ZgWo8EXCbhXaBt61pvVxMgUDCtIQGbvU1uQl9t/fN9uKZgWItY9XzF7lIphF1Q+9NSjp1p2tlhAQMEiqbFaQ02zxm386bW8dd6L3yO6HcWvEuo2Q1tGMBncH9XP9e1/dzvh4AxrueI7rIIEEugYI5HBLpIa+IiZoVMyybgPBVPSjmcZlkdZMafRVPbp2PwJc6gQriBf9iiMemB+CYxBBgPi6Z2FVWT6R0Mre9hjJrjAUDXkTEIvDDzZWKM5tfDOBfZwy+VUmyMGuMqEXlBEukig58XeiUQ0ZEXmReHTGj5GzHwxMytpFvRI725iPLrXlgEZjzwSqmnXmRbEr2DNGT64a4+dcL4xG8htW/9z2RllnYDhx3ziODM2ar1VxmlDX6A709LgLPd9QT8x/6YS0uT9/BcOvDWLkgHpAOCCsgVEhRQGC4dEJZQsIF0QFBAYbh0QFhCwQbSAUEBheFH78A/uDcPQHfpFIoAAAAASUVORK5CYII=);
+      background-size: cover;
+    }
+
+    /*中间*/
+    .center {
+      margin: 25px auto 0;
+      padding: 10px;
+      width: calc(100% - 45px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      box-shadow: 0 0 10px #ccc;
+      background-color: #fff;
+    }
+
+    .center > div:not(.car-num), .center > p {
+      margin-top: 30px;
+    }
+
+    .center .car-num {
+      width: 288px;
+      height: 135px;
+      background: url(https://common.ofo.so/newdist/daa967f224530707a6fec557d033ff2e.png) no-repeat center center;
+      background-size: cover;
+    }
+
+    .center .money-desc {
+      background: #eee;
+      padding: 0 10px;
+      border-radius: 70px;
+    }
+
+    .center .input {
+      width: 100%;
+    }
+
+    .center .input .text, .center .input #submitBtn {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .center .input #submitBtn.active {
+      background-color: #ffd500;
+    }
+
+    .center .input .text {
+      position: relative;
+      width: 65%;
+      height: 60px;
+      line-height: 60px;
+      border: 2px solid #ffd500;
+      text-align: center;
+      color: black;
+    }
+
+    /*光标*/
+    .center .input .text::before {
+      content: attr(data-content);
+    }
+
+    .center .input .text::after {
+      content: '';
+      height: 50%;
+      border-right: 2px solid #ffd500;
+      opacity: 1;
+      animation: focus .7s forwards infinite;
+    }
+
+    /*闪烁动画*/
+    @keyframes focus {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+
+    .center .input #submitBtn {
+      width: 60px;
+      height: 60px;
+      border: none;
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABY0lEQVRoQ+2XYW3DQAyFXxkUyhisFIpgKwMHQQvBQ7COwRhMhTAIYzAGqSylUlQ1iRPf1Y7k+5s7531+vjvfBisfm5XrRwJ4O5gOpAPGDGQJGRNoXp4OmFNoDODiABEdAXww879R//NvYiLaAfgB8M3M+9UBiGAiegfwCeDMzAcLhEsJlYRwAygF4QpQAsIdwAoRAqCDOAGQ43XWxg4D0EGcAbzNgQgFsAQiHMBciFGApmleLZeMZW3btgzgpWs5aCjWKAARtRYRhdZemFnaj4djCmBwYSFxY2Gk3ZANLU3fMgeeIPLhL3q90hczC8jgCLeJe+JHS+dGFAqgJ/4XwE7zXggDsES8uBACYKn4EAAW8e4ARCQXlTwv/7Q1f38cuZVQCfFuDpQS7wJQUrwXwBaANGqkOeenugG3PTAlTPs9AbSZqjUvHaiVWW3cdECbqVrz0oFamdXGTQe0mao1b/UOXAHwUYgxdDnt4wAAAABJRU5ErkJggg==) #eee no-repeat center;
+    }
+
+    footer table {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 215px;
+      text-align: center;
+      border-collapse: collapse;
+      border: 1px solid #dedfe2;
+      background-color: #fff;
+    }
+
+    footer table tr td {
+      width: 25%;
+    }
+
+    footer table tr:last-child td:nth-child(odd) {
+      background-color: #f6f6f6;
+    }
+
+    footer table tr:nth-child(3) td:last-child {
+      background-color: #dedfe2;
+    }
+
+    footer table tr:first-child td:last-child {
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABAUlEQVRYR+2WyxGCMBRFDwtbsAtbcGUvakVKL65swS5owY1zmSHDJ4SQD3HB2wBDmHdycyBUFK6qcH92gD2Bv0jgCVwLvQ21EjgAL+C8McQbuHRLcAQ+gI5bVAOcgKbvgBJQEkokZ301c0AJTD5EN+CRsztwB+RdW7a3IKeUNaBJmrIB5JKylQ7QEjgBdDO1lEa68fK6PkSppBxItwZAY1NIOZBuLYDGx0g5kS4EIFRKq3QhACFSzkoXCqDnfKV0ShcD4CulU7pYgCUpF6VLATAnpZd0KQBsUnpLlwqgL6XOzfY6brB0HftP2O1sZntdapgygbW9rONjE4iG2AGKJ/ADuUswvmERhx0AAAAASUVORK5CYII=) no-repeat center;
+      background-size: 20px 20px;
+    }
+
+    footer table tr:nth-child(2) td:last-child {
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABG0lEQVRYR9WX0Q3CMAxErxPAKIwAm8BksAmMwCh0A2SpQcFNk7smKKVSvxrfvZjYMQM6P0Nnf2wW4ADA3lujDJ0BPKf3SzKVATO+A9gDuDSAMPMrgBeAk4fwALF5IK2BCOZBawbhAXxADQSllfoJqMDC2aA1lqqAFkiASLG5MpSEJhA5ptQHFEFl7SdxJQBbyAgza5LHhgEoQdh3q3P/UOXLAuQgUjujzC1QAWAhaPM1ACUIyfwvAZZOe3wOpCwoZ4Axl+8OFiBX5z8vQ6bJMGtWNSJFWFlLteI1gnLMJq9jeRc1M8HmRjIbSh8AdtGupMbisuGzOQI4xpPx0lgeIGrMA0uAmJnn7oKuf0wKA2/bz2wrbusaqXUHeAOPTFwh/22d1gAAAABJRU5ErkJggg==) no-repeat center;
+      background-size: 20px 20px;
+    }
+  </style>
+</head>
+<body>
+<!--<p>-->
+  <!--:before 伪类妙用 + 打造一个假的输入框 https://juejin.im/entry/5907f7d70ce46300617c37e0-->
+<!--</p>-->
+<div class="wrapper">
+  <header>
+    <a href="javascript:;" class="back">返回</a>
+    <h3>ofo 共享单车</h3>
+    <a href="javascript:;" class="saoma"></a>
+  </header>
+  <section class="center">
+    <div class="car-num"></div>
+    <p class="money-desc">计费说明：1元/小时</p>
+    <div class="input">
+      <div class="text" data-content=""></div>
+      <button class="btn" id="submitBtn"></button>
+    </div>
+    <p class="input-desc">输入车牌号,获取解锁码</p>
+  </section>
+  <footer>
+    <table width="100%" border="1">
+      <tbody>
+      <tr>
+        <td class="number">1</td>
+        <td class="number">2</td>
+        <td class="number">3</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="number">4</td>
+        <td class="number">5</td>
+        <td class="number">6</td>
+        <td id="del"></td>
+      </tr>
+      <tr>
+        <td class="number">7</td>
+        <td class="number">8</td>
+        <td class="number">9</td>
+        <td rowspan="2">确认</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="number">0</td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+  </footer>
+</div>
+</body>
+</html>

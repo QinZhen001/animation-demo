@@ -1,0 +1,280 @@
+body {
+  background: #2D2D34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.part:not(:first-child) {
+  flex: 0 0 auto;
+  margin-top: 10px;
+}
+
+.part {
+  .box {
+    margin: 15px;
+    position: relative;
+    width: 120px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F27059;
+    .item {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+      transition: 0.4s all ease;
+    }
+  }
+
+  .one {
+    &::before, &::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: #F27059;
+      transition: 0.4s all ease;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    &:hover {
+      &::before,
+      &::after {
+        transition: 0.4s all ease;
+      }
+      &::before {
+        transform: translateY(-10px);
+      }
+      &::after {
+        transform: translateY(10px);
+      }
+      .item {
+        color: white;
+        &::before,
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+
+    .item {
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 2px;
+        background: #F27059;
+        transition: 0.4s all ease;
+        z-index: -1;
+      }
+      &::before {
+        left: 0
+      }
+      &::after {
+        right: 0
+      }
+    }
+  }
+
+  .two {
+    box-sizing: border-box;
+    border: 2px solid #F27059;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 100%;
+      transition: 0.4s all ease;
+      background: #F27059;
+      z-index: -1;
+    }
+    &:hover {
+      color: white;
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.part {
+  .wrapper {
+    padding: 10px;
+    height: 200px;
+    width: 100%;
+    background-color: #2E2E2E;
+    text-align: center;
+    font-size: 0;
+
+    .action-button {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      border-bottom: 2px solid #ccc;
+      .heart {
+        width: 100px;
+        height: 100px;
+        background-image: url("../../common/images/heart-sprite.png");
+        &:hover {
+          animation: thumb-up 1s steps(28);
+        }
+      }
+
+      .star {
+        width: 100px;
+        height: 100px;
+        background-image: url("../../common/images/star-sprite.png");
+        &:hover {
+          animation: thumb-up 1s steps(28);
+        }
+      }
+    }
+  }
+
+  @keyframes thumb-up {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -2800px 0;
+    }
+  }
+}
+
+.part {
+  .circle {
+    padding: 10px;
+    text-align: center;
+    .item {
+      /*抽取可复用部分item*/
+      position: relative;
+      display: inline-block;
+      margin: 0 6%;
+      width: 48px;
+      height: 48px;
+      &:hover {
+        i {
+          &::after {
+            transform: scale(1);
+          }
+        }
+      }
+      span {
+        display: block;
+        position: relative;
+        width: 48px;
+        height: 48px;
+        background-size: 30px;
+      }
+
+      i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 48px;
+        height: 48px;
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          content: '';
+          border-radius: 50%;
+        }
+        &::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          content: '';
+          border-radius: 50%;
+          transition: all .3s;
+          transform: scale(0);
+        }
+      }
+    }
+    .boy {
+      //特有部分
+      span {
+        background: url("../../common/images/boy.png") no-repeat center;
+      }
+      i {
+        &::before {
+          background-color: #20a839;
+        }
+        &::after {
+          background-color: #30cc54;
+        }
+      }
+    }
+  }
+}
+
+.part {
+  .awesome-btn {
+    position: relative;
+    display: block;
+    margin: 20px auto;
+    padding: 0 10px;
+    height: 60px;
+    width: 300px;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    background: #f72359;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    border-radius: 100px;
+
+    #text {
+      //防止文字被遮挡 深入理解-index
+      position: relative;
+    }
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: var(--y);
+      left: var(--x);
+      background: radial-gradient(circle closest-side, #4405f7, transparent);
+      transform: translate(-50%, -50%);
+      transition: width .2s ease, height .2s ease;
+    }
+
+    &:hover::before {
+      width: 400px;
+      height: 400px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
