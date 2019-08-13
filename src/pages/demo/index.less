@@ -1,0 +1,43 @@
+.part {
+  padding: 10px;
+  .circle-wrapper {
+    display: inline-block;
+    text-align: center;
+    .circle {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background: url("../../common/images/bg.jpg");
+      background-size: cover;
+      border-radius: 50%;
+    }
+    .circle-text {
+      margin-top: 5px;
+      max-width: 200px;
+      display: block;
+      text-align: left;
+    }
+    // 关键代码 ---------------------------------------------
+    .circle-1 {
+      transition: all 10s;
+    }
+    .circle-1:hover {
+      transform: rotate(10turn);
+    }
+    .circle-2 {
+    }
+    .circle-2:hover {
+      //transition和transform都写在hover上
+      transition: all 10s;
+      transform: rotate(10turn);
+    }
+    // 关键代码 ---------------------------------
+  }
+  .circle-wrapper + .circle-wrapper {
+    margin-left: 50px;
+  }
+}
+
+pre {
+  text-align: left;
+}

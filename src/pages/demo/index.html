@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一些小demo展示</title>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+</head>
+<body>
+
+<div class="part animation-circle">
+    <div class="circle-wrapper">
+        <div class="circle circle-1">
+        </div>
+        <span class="circle-text">hover动画效果 移开鼠标继续反方向动画</span>
+        <div class="code-wrapper">
+        <pre>
+            <code class="css">
+.circle-1{transition: all 10s;}
+.circle-1:hover {transform: rotate(10turn);}
+            </code>
+        </pre>
+        </div>
+    </div>
+    <div class="circle-wrapper">
+        <div class="circle circle-2"></div>
+        <span class="circle-text">hover动画效果 移开鼠动画马上消失</span>
+        <pre>
+            <code class="css">
+    .circle-2 {}
+    .circle-2:hover {
+      //transition和transform都写在hover上
+      transition: all 10s;
+      transform: rotate(10turn);
+    }
+            </code>
+        </pre>
+    </div>
+</div>
+</body>
+</html>
