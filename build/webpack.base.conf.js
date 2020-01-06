@@ -83,9 +83,9 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '../'
-            }
+            // options: {
+            //   publicPath: '../'
+            // }
           },
           'css-loader'
         ]
@@ -94,17 +94,24 @@ module.exports = {
         test: /\.less$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '../'
-            }
+            loader: MiniCssExtractPlugin.loader
           },
           'css-loader',
           'less-loader'
         ],
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.scss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          'css-loader',
+          'sass-loader'
+        ],
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         use: [
           {
             loader: 'url-loader',
@@ -115,7 +122,19 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: "fonts/[name].[hash:7].[ext]"
+        }
+      }
     ]
+  },
+  externals: {
+    respond: "respond",
+    html5shiv: "html5shiv"
   },
   plugins: plugins
 }

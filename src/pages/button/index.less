@@ -8,11 +8,12 @@ body {
 }
 
 .part:not(:first-child) {
+  padding: 0 5px;
   flex: 0 0 auto;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
-.part {
+.part-1 {
   .box {
     margin: 15px;
     position: relative;
@@ -109,7 +110,7 @@ body {
   }
 }
 
-.part {
+.part-2 {
   .wrapper {
     padding: 10px;
     height: 200px;
@@ -156,7 +157,7 @@ body {
   }
 }
 
-.part {
+.part-3 {
   .circle {
     padding: 10px;
     text-align: center;
@@ -227,7 +228,7 @@ body {
   }
 }
 
-.part {
+.part-4 {
   .awesome-btn {
     position: relative;
     display: block;
@@ -268,7 +269,7 @@ body {
   }
 }
 
-.part {
+.part-5 {
   font-size: 20px;
   color: whitesmoke;
   .text {
@@ -449,4 +450,38 @@ body {
   }
 }
 
-
+.part-6 {
+  .btn {
+    background-color: #c47135;
+    border: none;
+    color: #ffffff;
+    outline: none;
+    padding: 12px 40px 10px;
+    position: relative;
+    &::before, &::after {
+      position: absolute;
+      height: 24px;
+      width: 24px;
+      border: 0 solid transparent;
+      transition: all 0.25s;
+      content: "";
+    }
+    &::before {
+      border-top: 2px solid #c47135;
+      left: 0;
+      top: -5px;
+    }
+    &::after {
+      border-bottom: 2px solid #c47135;
+      bottom: -5px;
+      right: 0;
+    }
+    &:hover {
+      background-color: #c47135;
+      &::before, &::after {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

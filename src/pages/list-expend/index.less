@@ -1,25 +1,56 @@
 body {
   padding: 10px;
 }
-button {
-  margin-bottom: 10px;
-  width: 100px;
-  height: 50px;
+
+.part {
+  padding: 10px;
 }
-.weui-cells {
-  margin-top: 0;
-  opacity: 0;
-  width: 100px;
-  height: 30px;
-  line-height: 30px;
-  background: #888;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  -webkit-transition: .3s;
-  transition: .3s;
+
+.part-1 {
+  button {
+    margin-bottom: 10px;
+    width: 100px;
+    height: 50px;
+  }
+
+  .weui-cells {
+    margin-top: 0;
+    opacity: 0;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    background: #888;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+
+  .weui-cells_show {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
 }
-.weui-cells_show {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
+
+.part-2 {
+  .reference {
+    position: relative;
+    background: tomato;
+    width: 100px;
+    height: 100px;
+    .popout-menu {
+      position: absolute;
+      visibility: hidden;
+      left: 100%;
+      background: #333;
+      color: white;
+      padding: 15px;
+    }
+    &:hover > .popout-menu,
+    &:focus > .popout-menu,
+    &:focus-within > .popout-menu {
+      visibility: visible;
+    }
+  }
 }
