@@ -1,6 +1,9 @@
 const webpack = require('webpack')
+const process = require('process')
+
 
 const webpackConfig = require('./webpack.prod.conf')
+
 
 
 webpack(webpackConfig, (err, stats) => {

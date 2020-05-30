@@ -53,6 +53,14 @@ const contents = [
   {
     title: "loading 加载动画",
     url: ""
+  },
+  {
+    title: "parallax 滚动视差",
+    url: ""
+  },
+  {
+    title: "water-wave 水波效果",
+    url: ""
   }
 ]
 
