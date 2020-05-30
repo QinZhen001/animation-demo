@@ -1,0 +1,173 @@
+$img-url: "http://pic7.photophoto.cn/20080407/0034034859692813_b.jpg";
+
+
+.header{
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+.wave-wrapper1 {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  .wave {
+    position: absolute;
+    top: calc((100% - 30px) / 2);
+    left: calc((100% - 30px) / 2);
+    width: 30px;
+    height: 30px;
+    border-radius: 300px;
+  }
+  // wave0 wave1 ... 这些可以用scss函数啥的来做
+  @for $i from 0 to 5 {
+    .wave#{$i} {
+      background: lighten(red, $i * 10%);
+      z-index: 2 + $i;
+      background-size: auto 100%;
+      animation: w 1s $i * 0.2s forwards infinite;
+      @if $i == 0 {
+        background-size: auto 106%;
+      }
+    }
+  }
+
+  @keyframes w {
+    0% {
+      top: calc((100% - 30px) / 2);
+      left: calc((100% - 30px) / 2);
+      width: 30px;
+      height: 30px;
+    }
+    100% {
+      top: calc((100% - 300px) / 2);
+      left: calc((100% - 300px) / 2);
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
+
+.wave-wrapper2 {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  .wave {
+    position: absolute;
+    top: calc((100% - 30px) / 2);
+    left: calc((100% - 30px) / 2);
+    width: 30px;
+    height: 30px;
+    border-radius: 300px;
+    background: url($img-url);
+    // 这个属性很关键
+    background-attachment: fixed;
+    background-position: center center;
+  }
+  // wave0 wave1 ... 这些可以用scss函数啥的来做
+  @for $i from 0 to 5 {
+    .wave#{$i} {
+      z-index: 2 + $i;
+      animation: w 1s $i * 0.2s forwards;
+    }
+  }
+  .wave0 {
+    background-size: auto 106%;
+  }
+  .wave1 {
+    background-size: auto 102%;
+  }
+  .wave2 {
+    background-size: auto 106%;
+  }
+  .wave3 {
+    background-size: auto 104%;
+  }
+  .wave4 {
+    background-size: auto 101%;
+  }
+  .wave5 {
+    background-size: auto 102%;
+  }
+
+  @keyframes w {
+    0% {
+      top: calc((100% - 30px) / 2);
+      left: calc((100% - 30px) / 2);
+      width: 30px;
+      height: 30px;
+    }
+    100% {
+      top: calc((100% - 300px) / 2);
+      left: calc((100% - 300px) / 2);
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
+
+
+
+
+.wave-wrapper3 {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background: url($img-url);
+  .wave {
+    position: absolute;
+    top: calc((100% - 30px) / 2);
+    left: calc((100% - 30px) / 2);
+    width: 30px;
+    height: 30px;
+    border-radius: 300px;
+    background: url($img-url);
+    // 这个属性很关键
+    background-attachment: fixed;
+    background-position: center center;
+  }
+  // wave0 wave1 ... 这些可以用scss函数啥的来做
+  @for $i from 0 to 5 {
+    .wave#{$i} {
+      z-index: 2 + $i;
+      animation: w 1s $i * 0.2s forwards;
+    }
+  }
+  .wave0 {
+    background-size: auto 106%;
+  }
+  .wave1 {
+    background-size: auto 102%;
+  }
+  .wave2 {
+    background-size: auto 106%;
+  }
+  .wave3 {
+    background-size: auto 104%;
+  }
+  .wave4 {
+    background-size: auto 101%;
+  }
+  .wave5 {
+    background-size: auto 102%;
+  }
+
+  @keyframes w {
+    0% {
+      top: calc((100% - 30px) / 2);
+      left: calc((100% - 30px) / 2);
+      width: 30px;
+      height: 30px;
+    }
+    100% {
+      top: calc((100% - 300px) / 2);
+      left: calc((100% - 300px) / 2);
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
+
