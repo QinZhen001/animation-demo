@@ -115,8 +115,20 @@ $img-url: "http://pic7.photophoto.cn/20080407/0034034859692813_b.jpg";
 .wave-wrapper3 {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 1000px;
   background: url($img-url);
+  .wave-position{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    .wave-body{
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+  }
   .wave {
     position: absolute;
     top: calc((100% - 30px) / 2);
@@ -124,10 +136,10 @@ $img-url: "http://pic7.photophoto.cn/20080407/0034034859692813_b.jpg";
     width: 30px;
     height: 30px;
     border-radius: 300px;
+    // TODO: 这里会有问题
     background: url($img-url);
     // 这个属性很关键
     background-attachment: fixed;
-    background-position: center center;
   }
   // wave0 wave1 ... 这些可以用scss函数啥的来做
   @for $i from 0 to 5 {
