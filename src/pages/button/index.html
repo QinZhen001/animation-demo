@@ -1,66 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>一些按钮效果</title>
 </head>
+
 <body>
-<div class="part part-1">
-    <div class="box one">
-        <div class="item">Buy</div>
+    <div class="part part-1">
+        <div class="box one">
+            <div class="item">Buy</div>
+        </div>
+        <div class="box two">
+            <div class="item">Buy</div>
+        </div>
     </div>
-    <div class="box two">
-        <div class="item">Buy</div>
+
+    <div class="part part-2">
+        <div class="wrapper">
+            <a href="#" class="action-button">
+                <div class="heart"></div>
+            </a>
+            <a href="#" class="action-button">
+                <div class="star"></div>
+            </a>
+        </div>
     </div>
-</div>
 
-<div class="part part-2">
-    <div class="wrapper">
-        <a href="#" class="action-button">
-            <div class="heart"></div>
-        </a>
-        <a href="#" class="action-button">
-            <div class="star"></div>
-        </a>
+    <div class="part part-3">
+        <div class="circle">
+            <a href="#" class="item boy">
+                <i></i>
+                <span></span>
+            </a>
+        </div>
     </div>
-</div>
 
-<div class="part part-3">
-    <div class="circle">
-        <a href="#" class="item boy">
-            <i></i>
-            <span></span>
-        </a>
+    <div class="part part-4">
+        <button class="awesome-btn">
+            <span id="text">Hover me I'm awesome</span>
+        </button>
     </div>
-</div>
 
-<div class="part part-4">
-    <button class="awesome-btn">
-        <span id="text">Hover me I'm awesome</span>
-    </button>
-</div>
+    <div class="part part-5">
+        <a class="link"
+            href="https://juejin.im/post/5d439eef5188255d4e1c0f8c#heading-13">https://juejin.im/post/5d439eef5188255d4e1c0f8c#heading-13</a>
+        <button class="btn2 btn-slide">btn-slide 滑箱效果</button>
+        <button class="btn2 btn-jelly">btn-jelly 果冻效果</button>
+        <button class="btn2 btn-jelly2">btn-jelly 果冻效果2</button>
+        <button class="btn2 btn-pulse">btn-pulse 脉冲效果</button>
+        <button class="btn2 btn-flash">btn-flash 闪光效果</button>
+        <button class="btn2 btn-bubble">btn-bubble 气泡效果</button>
+        <button class="btn2 btn-bubble2">btn-bubble2 气泡效果</button>
 
-<div class="part part-5">
-    <a class="link" href="https://juejin.im/post/5d439eef5188255d4e1c0f8c#heading-13">https://juejin.im/post/5d439eef5188255d4e1c0f8c#heading-13</a>
-    <button class="btn2 btn-slide">btn-slide 滑箱效果</button>
-    <button class="btn2 btn-jelly">btn-jelly 果冻效果</button>
-    <button class="btn2 btn-jelly2">btn-jelly 果冻效果2</button>
-    <button class="btn2 btn-pulse">btn-pulse 脉冲效果</button>
-    <button class="btn2 btn-flash">btn-flash 闪光效果</button>
-    <button class="btn2 btn-bubble">btn-bubble 气泡效果</button>
-    <button class="btn2 btn-bubble2">btn-bubble2 气泡效果</button>
+        <div class="text">脉冲效果：注意设置 button 的z-index属性并且让其生效，要保证其大于 ::before 的 z-index 属性，防止 dom 元素被伪元素覆盖。</div>
+        <div class="text">闪光效果：实现上依然是借助伪元素，闪光特效更多注重的是配色，动画方面实现的核心是利用rotate来实现「倾斜」的效果，利用translate3d来实现「闪动」的效果。</div>
+    </div>
 
-    <div class="text">脉冲效果：注意设置 button 的z-index属性并且让其生效，要保证其大于 ::before 的 z-index 属性，防止 dom 元素被伪元素覆盖。</div>
-    <div class="text">闪光效果：实现上依然是借助伪元素，闪光特效更多注重的是配色，动画方面实现的核心是利用rotate来实现「倾斜」的效果，利用translate3d来实现「闪动」的效果。</div>
-</div>
+    <div class="part part-6">
+        <div class="button-wrapper">
+            <button class="btn">Submit</button>
+        </div>
+    </div>
 
-<div class="part part-6">
-    <div class="button-wrapper">
+
+    <div class="part part-7">
+        <div class="text">按钮点击圈圈效果</div>
         <button class="btn">Submit</button>
     </div>
-</div>
-
 
 
 </body>
+
 </html>

@@ -1,0 +1,28 @@
+.box-blur {
+  margin: 20px;
+  width: 256px; height: 192px;
+  position: relative;
+  overflow: hidden;
+}
+.radial-blur {
+  position: absolute;
+  filter: blur(20px);
+  mask-image: radial-gradient(transparent, transparent 10%, black 60%);
+  transform: scale(1.2);
+}
+.local-blur {
+  position: absolute;
+  filter: blur(12px);
+  mask: no-repeat center;
+  mask-image: linear-gradient(black, black), linear-gradient(black, black);
+  mask-size: cover, 60px 60px;
+  mask-composite: exclude;
+  mask-composite: source-out;
+  transform: scale(1.1);
+}
+.radial-blur,
+.local-blur {
+  left: 0; right: 0; top: 0; bottom: 0;
+  width: 100%; height: 100%;
+  margin: auto;
+}

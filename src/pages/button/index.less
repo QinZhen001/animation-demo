@@ -3,14 +3,41 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
   font-family: 'Roboto', sans-serif;
+  padding: 20px;
 }
+
+body:active::after{
+  transform: translate(-50%, -100%);
+  opacity: 0.5;
+  transition: 0s;
+  left: -999px;
+}
+
+body::after{
+  content: 'asdklalfkjal.com';
+  position:fixed;
+  z-index: 999;
+  left: calc(var(--clientx, -999) * 1px);
+  top: calc(var(--clienty, -999) * 1px);
+  transform: translate(-50%, calc(-100% - 20px));
+  opacity: 0;
+  transition: transform .5s, opacity .5s;
+  color: white;
+}
+
 
 .part:not(:first-child) {
   padding: 0 5px;
   flex: 0 0 auto;
-  margin: 10px 0;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.text {
+  padding: 10px;
+  font-size: 20px;
+  color: whitesmoke;
 }
 
 .part-1 {
@@ -270,11 +297,6 @@ body {
 }
 
 .part-5 {
-  font-size: 20px;
-  color: whitesmoke;
-  .text {
-    padding: 10px;
-  }
   .btn2 {
     margin: 5px;
     color: white;
@@ -482,6 +504,38 @@ body {
         height: 100%;
         width: 100%;
       }
+    }
+  }
+}
+
+
+
+.part-7 {
+  .btn {
+    background-color: sandybrown;
+    border: none;
+    color: #ffffff;
+    outline: none;
+    padding: 12px 40px 10px;
+    position: relative;
+    overflow: hidden;
+    &:not(disabled):active::after{
+      transform: translate(-50%,-50%) scale(0);
+      opacity: .3;
+      transition: 0s;
+    }
+    &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%; 
+      height: 100%; 
+      left: 0;
+      top: 0;
+      background: radial-gradient(circle, currentColor 10%, transparent 10%) no-repeat 50%;
+      transform: translate(-50%,-50%) scale(10);
+      opacity: 0;
+      transition: transform .3s, opacity .8s;
     }
   }
 }
