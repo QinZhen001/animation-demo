@@ -72,6 +72,10 @@ const contents = [
     title: "滤镜效果",
     url: "filter",
   },
+  {
+    title: "vue-list 动画",
+    url: "vue-list-animation",
+  },
 ];
 
 const body = document.body;

@@ -42,6 +42,8 @@ let plugins = [
   // }),
 ];
 
+// let _id = 0
+
 Object.keys(entries).forEach((key) => {
   plugins.push(
     new HtmlWebpackPlugin({
@@ -49,16 +51,27 @@ Object.keys(entries).forEach((key) => {
       filename: `${key}.html`,
       template: `src/pages/${key}/index.html`,
       chunks: [key],
-      minify: {
-        // 压缩HTML文件
-        removeComments: true, // 移除HTML中的注释
-        collapseWhitespace: true, // 删除空白符与换行符
-        minifyCSS: true, // 压缩内联css
-      },
       favicon: icoPath,
-      inject: true,
     })
   );
+  const fileFolderpath = path.resolve(srcPath,`pages/${key}`)
+  const res =  fs.readdirSync(fileFolderpath)
+  res.forEach(item=>{
+    if(path.extname(item) == '.html' && item.indexOf('index') == -1){
+        console.log('item',item)
+        title = item.split('.')[0]
+        plugins.push(
+          new HtmlWebpackPlugin({
+            title: title,
+            filename: `${item}`,
+            template: `src/pages/${key}/${item}`,
+            chunks: [key],
+            favicon: icoPath,
+          })
+        );
+      
+    }
+  })
 });
 
 module.exports = {
