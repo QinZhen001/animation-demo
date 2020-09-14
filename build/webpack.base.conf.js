@@ -58,7 +58,6 @@ Object.keys(entries).forEach((key) => {
   const res =  fs.readdirSync(fileFolderpath)
   res.forEach(item=>{
     if(path.extname(item) == '.html' && item.indexOf('index') == -1){
-        console.log('item',item)
         title = item.split('.')[0]
         plugins.push(
           new HtmlWebpackPlugin({
