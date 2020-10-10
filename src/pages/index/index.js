@@ -76,6 +76,10 @@ const contents = [
     title: "vue-list 动画",
     url: "vue-list-animation",
   },
+  {
+    title: "mouseover 鼠标滑入动画",
+    url: "mouseover",
+  },
 ];
 
 const body = document.body;
