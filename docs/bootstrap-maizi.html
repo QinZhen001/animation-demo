@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BootStrap项目实战</title>
+    <!-- Bootstrap -->
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<link rel="shortcut icon" href="favicon.ico"></head>
+<body>
+
+<!--导航-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="index.html" class="navbar-brand">麦子学院</a>
+        </div>
+        <!--导航-->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#bbs">论坛</a></li>
+                <li><a href="#html5">前端开发</a></li>
+                <li><a href="#course">最新课程</a></li>
+                <li><a href="#app">移动app</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="home">
+    <div class="lvjing">
+        <div class="container">
+            <div class="row wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <h1>BootStrap实战课程等你来站</h1>
+                    <p>
+                        本套课程适用于：1.WEB开发人员；2.网站维护人员、管理人员<br>
+                        培训技能的目标：使用bootstrap框架快速构建响应式网页，颠覆传统WEB前端！
+                    </p>
+                    <img src="img/php.1fcd609.jpg" class="img-responsive" alt="php">
+                </div>
+                <div class="col-md-1l"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="bbs">
+    <div class="container">
+        <div class="row wow fadeInUp" data-wow-duration="1s">
+            <div class="col-md-4">
+                <a href="javascript:void(0);" onclick="js_method()">
+                    <img src="data:image/png;base64,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" class="img-responsive" alt="Android">
+                    <h3>Android开发</h3>
+                    <p>
+                        Android开发技术交流、问题求助、实战案例分享
+                    </p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="javascript:;" target="_blank">
+                    <img src="data:image/png;base64,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" class="img-responsive" alt="ios">
+                    <h3>IOS开发</h3>
+                    <p>
+                        iOS开发技术交流，海量iOS实战干货分享
+                    </p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="javascript:;" target="_blank">
+                    <img src="data:image/png;base64,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" class="img-responsive" alt="嵌入式">
+                    <h3>嵌入式等底层开发</h3>
+                    <p>
+                        底层嵌入式开发、实战案例等技术交流讨论
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="html5">
+    <div class="container">
+        <div class="col-md-6 wow fadeInLeft" data-wow-duration="1s">
+            <h2>HTML5前端开发</h2>
+            <p>
+                一线资深前端开发工程师倾情打造！助你完成普通程序员到优秀工程师的华丽升级！
+            </p>
+            <p>
+                <span class="glyphicon glyphicon-grain mai-icon"></span>
+                使用HTML5与CSS3技术轻松实现设备自适应展示。
+            </p>
+            <p>
+                <span class="glyphicon glyphicon-grain mai-icon"></span>
+                清晰明了的语义代码结构，更高的可读性、更利于页面维护的。
+            </p>
+        </div>
+        <div class="col-md-6 wow fadeInRight" data-wow-duration="1s">
+            <img src="img/html5.8467607.jpg" class="img-responsive" alt="html5">
+        </div>
+    </div>
+</section>
+
+<section id="bootstrap">
+    <div class="container wow fadeInUp" data-wow-duration="1s">
+        <div class="col-md-6">
+            <img src="img/Bootstrap.033e6cb.jpg" class="img-responsive" alt="html5">
+        </div>
+        <div class="col-md-6">
+            <h2>bootstrap实战视频教程</h2>
+            <p>
+                Bootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目。
+            </p>
+            <p>
+                <span class="glyphicon glyphicon-grain mai-icon"></span>
+                你的网站和应用能在 Bootstrap 的帮助下通过同一份代码快速、有效适配手机、平板、PC 设备。
+            </p>
+            <p>
+                <span class="glyphicon glyphicon-grain mai-icon"></span>
+                Bootstrap 提供了全面、美观的文档。你能在这里找到关于 HTML 元素、HTML 和 CSS 组件、jQuery 插件方面的所有详细文档。
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="course">
+    <div class="container">
+        <div class="row wow fadeIn" data-wow-duration="2s">
+            <div class="col-md-12">
+                <h2>最新课程</h2>
+            </div>
+
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="img/swift.c8b5121.jpg" class="img-responsive" alt="switft">
+                    <a class="btn btn-primary" href="javascript:;" onclick="js_method()" target="_blank">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="img/swift.c8b5121.jpg" class="img-responsive" alt="switft">
+                    <a class="btn btn-primary" href="javascript:;" onclick="js_method()" target="_blank">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="img/swift.c8b5121.jpg" class="img-responsive" alt="switft">
+                    <a class="btn btn-primary" href="javascript:;" onclick="js_method()" target="_blank">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="img/swift.c8b5121.jpg" class="img-responsive" alt="switft">
+                    <a class="btn btn-primary" href="javascript:;" onclick="js_method()" target="_blank">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="img/swift.c8b5121.jpg" class="img-responsive" alt="switft">
+                    <a class="btn btn-primary" href="javascript:;" onclick="js_method()" target="_blank">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="img/swift.c8b5121.jpg" class="img-responsive" alt="switft">
+                    <a class="btn btn-primary" href="javascript:;" onclick="js_method()" target="_blank">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="img/swift.c8b5121.jpg" class="img-responsive" alt="switft">
+                    <a class="btn btn-primary" href="javascript:;" onclick="js_method()" target="_blank">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="img/swift.c8b5121.jpg" class="img-responsive" alt="switft">
+                    <a class="btn btn-primary" href="javascript:;" onclick="js_method()" target="_blank">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="app">
+    <div class="container wow fadeInUp" data-wow-duration="1s">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>麦子学院移动APP下载</h2>
+                <p>
+                    全新UI交互，与新网站数据同步，更加丰富的课程，开启精彩无限，语音搜索课程，喊出你想要的课程，一件收藏，方便自己重复学习，离线下载课程，在哪儿都能开！
+                </p>
+                <button class="btn btn-primary">
+                    <span class="glyphicon glyphicon-download-alt"></span>
+                    iPhone版
+                </button>
+                <button class="btn btn-primary">
+                    <span class="glyphicon glyphicon-download-alt"></span>
+                    Android版
+                </button>
+            </div>
+            <div class="col-md-6">
+                <img src="img/app-banner.eed01c5.jpg" class="img-responsive" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="contact">
+    <div class="lvjing">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 wow fadeInLeft" data-wow-duration="1s">
+                    <h2>
+                        <span class="glyphicon glyphicon-send" data-wow-duration="1s"></span>
+                        hutaishi@qq.com
+                    </h2>
+                    <p>
+                        麦子学院是成都麦子信息技术有限公司旗下一个IT在线教育平台，目前已有30万注册用户，
+                        10万以上APP下载量，5000小时视频内容。 我们从不说空话，专注于IT在线教育，脱离传统教育的束缚，让你走哪学哪，想学就学。逗比的老师，
+                        贴心的助教，在这儿你能感受到来自五 湖四海伙伴们热情和踏实的学习态度！
+                    </p>
+                    <address>
+                        <p>
+                            <span class="glyphicon glyphicon-home"></span>
+                            地址:成都市高新区天府软件园D5-11
+                        </p>
+                        <p>
+                            <span class="glyphicon glyphicon-phone-alt"></span>
+                            联系电话：028-86567913
+                        </p>
+                        <p>
+                            <span class="glyphicon glyphicon-envelope"></span>
+                            邮箱:hutaishi@qq.coml
+                        </p>
+                    </address>
+                </div>
+                <div class="col-md-6 wow fadeInRight" data-wow-duration="1s">
+                    <form action="" method="post">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="请输入姓名">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="请输入邮箱">
+                        </div>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" placeholder="标题">
+                        </div>
+                        <div class="col-md-12">
+                            <textarea class="form-control" placeholder="留言内容" name="" id="" cols="30"
+                                      rows="8"></textarea>
+                        </div>
+                        <div class="col-md-6 col-md-offset-6">
+                            <input type="submit" class="form-control" value="提交">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--底部-->
+<footer>
+    <div class="widgets-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="widget widget_text">
+                        <h4 class="widget-title">The SKIPT App</h4>
+                        <div class="textwidget">
+                            <p>SKIPT enables users to buy and sell any spot, in any line by giving users the opportunity
+                                to find one
+                                another based on their location. With SKIPT, you decide how to spend your time. Any
+                                line. Any time. Any
+                                where.</p>
+                            <p>
+                                <a href="#overview">Back to overview»</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="widget widget_text">
+                        <h4 class="widget-title">Contact</h4>
+                        <div class="textwidget">
+                            <p>
+                                <a href="">iloveSKIPT@theskiptapp.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="widget widget_text">
+                        <h4 class="widget-title">Social</h4>
+                        <div class="textwidget">
+                            <img src="data:image/png;base64,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" class="img-responsive" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-band">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 copy-info">
+                    ©
+                    <a href="http://www.theskiptapp.com">The Skipt App</a>
+                    All Rights Reserved 2017
+                </div>
+                <div class="col-sm-6 extra-info">
+                    <nav id="wbc9-footer" class="footer-menu">
+                        <ul id="footer-menu" class="wbc_footer_menu">
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-249"><a
+                                    href="http://www.theskiptapp.com/#up">Home</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-242"><a
+                                    href="http://www.theskiptapp.com/#overview">Overview</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-246"><a
+                                    href="http://www.theskiptapp.com/#Benefits">Benefits</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-173"><a
+                                    href="http://www.theskiptapp.com/#screenshots">Screenshots</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-250"><a
+                                    href="http://www.theskiptapp.com/#testimonials">Testimonials</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-256"><a
+                                    href="http://www.theskiptapp.com/#faqs">FAQs</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="js/bootstrap-maizi.a78a8c7707bba8707584.js"></script></body>
+</html>

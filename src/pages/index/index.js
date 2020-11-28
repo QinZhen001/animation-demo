@@ -80,6 +80,10 @@ const contents = [
     title: "mouseover 鼠标滑入动画",
     url: "mouseover",
   },
+  {
+    title: "corner 棱角效果",
+    url: "corner",
+  },
 ];
 
 const body = document.body;

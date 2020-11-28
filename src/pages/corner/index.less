@@ -1,0 +1,55 @@
+@currentColor:#ffb60d;
+
+
+.content{
+  padding:10px;
+}
+
+.progress {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 10px;
+  background: linear-gradient(90deg, #ffcc00 0%, #ffb60d 100%);
+  border-radius: 12px 0px 0px 12px;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -20px;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(
+      125deg,
+      #ffb60d 50%,
+      transparent 50%,
+      transparent 100%
+    );
+    -webkit-font-smoothing: antialiased; 
+  }
+}
+
+
+.corner1{
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 10px;
+  background: linear-gradient(90deg, #ffcc00 0%, #ffb60d 100%);
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -5px;
+    width: 10px;
+    height: 100%;
+    background: #ffb60d;
+    transform: skewX(-30deg);
+  }
+}
+
+
+
+

@@ -26,12 +26,12 @@ let entries = fs.readdirSync(pagesPath).reduce((entries, dir) => {
 const sourceMap = false
 
 let plugins = [
-  // new CopyPlugin([
-  //   {
-  //     from: path.resolve(__dirname, "../src/assets"),
-  //     to: path.resolve(__dirname, "../dist/assets"),
-  //   }
-  // ]),
+  new CopyPlugin([
+    {
+      from: path.resolve(__dirname, "../src/assets"),
+      to: path.resolve(__dirname, "../dist/assets"),
+    }
+  ]),
   new CleanWebpackPlugin(),
   // new MiniCssExtractPlugin({
   //   // Options similar to the same options in webpackOptions.output
@@ -68,7 +68,6 @@ Object.keys(entries).forEach((key) => {
             favicon: icoPath,
           })
         );
-      
     }
   })
 });
