@@ -88,6 +88,10 @@ const contents = [
     title: "listen-scroll 监听滚动判断元素是否可见",
     url: "listen-scroll",
   },
+  {
+    title: "banner 无缝轮播图",
+    url: "banner",
+  },
 ];
 
 const body = document.body;
